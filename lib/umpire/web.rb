@@ -108,9 +108,9 @@ module Umpire
 
     def self.log(data, &blk)
       data.delete(:level)
-      Log.log(Log.merge({ns: "web"}, data), &blk)
+      Log.log(Log.merge({:ns => "web"}, data), &blk)
     end
   end
 end
 
-Instruments.defaults = {logger: Umpire::Web, method: :log}
+Instruments.defaults = {:logger => Umpire::Web, :method => :log}

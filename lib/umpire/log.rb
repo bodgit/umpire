@@ -8,7 +8,7 @@ module Umpire
     end
 
     def self.log(data, &blk)
-      Scrolls.log(merge({app: "umpire", deploy: Config.deploy}, data), &blk)
+      Scrolls.log(merge({:app => "umpire", :deploy => Config.deploy}, data), &blk)
     end
   end
 end
